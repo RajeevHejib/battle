@@ -27,7 +27,8 @@ class Battle < Sinatra::Base
     @player_1_name = $player1.name
     @player_2_name = $player2.name
     @player_1_hp = $player1.hit_points
-    @player_2_hp = $player2.reduce_points
+    $player1.attack($player2)
+    @player_2_hp = $player2.hit_points
     erb(:attack)
   end
 
