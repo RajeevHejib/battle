@@ -4,6 +4,6 @@
 feature 'How close to winning?' do
   scenario 'see hit points' do
     sign_in_and_play
-    expect(page).to have_content 'Julien: 60HP'
+    expect(page).to have_content 'Julien: 80HP'
   end
 end
