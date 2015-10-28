@@ -19,12 +19,7 @@ describe Player do
     end
   end
 
-  describe "attack" do
-    it "player 1 attacks player 2" do
-      expect(player2).to receive(:reduce_points)
-      player1.attack(player2)
-    end
-
+  describe "reduce points" do
     it "player 2's points reduced after attack" do
       points_before = player2.hit_points
       player2.reduce_points
