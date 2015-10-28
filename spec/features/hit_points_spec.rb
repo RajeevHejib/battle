@@ -1,13 +1,9 @@
-require './app'
-
 # As Player 1,
 # So I can see how close I am to winning
 # I want to see Player 2's Hit Points
-describe "Attach" do
-  feature 'How close to winning?' do
-    scenario 'see hit points' do
-      sign_in_and_play
-      expect(page).to have_content 'Julien: 60HP'
-    end
+feature 'How close to winning?' do
+  scenario 'see hit points' do
+    sign_in_and_play
+    expect(page).to have_content 'Julien: 60HP'
   end
 end
