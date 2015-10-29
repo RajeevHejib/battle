@@ -7,4 +7,14 @@ feature 'Attacking...' do
     click_button('Attack')
     expect(page).to have_content 'Rajeev attacked Julien'
   end
+
+  scenario "Player's trurn changes" do
+    sign_in_and_play
+    click_button('Attack')
+    click_button('Next Turn')
+    click_button('Attack')
+    expect(page).to have_content "Rajeev's hit points reduced to: 70HP"
+  end
+
+
 end
