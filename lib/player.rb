@@ -9,7 +9,7 @@ class Player
   end
 
   def reduce_points
-    @hit_points -= 10
+    @hit_points -= Kernel.rand(0..79)
   end
 
 end

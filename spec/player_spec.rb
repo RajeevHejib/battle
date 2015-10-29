@@ -7,6 +7,10 @@ describe Player do
   subject(:player1) { Player.new("Rajeev") }
   subject(:player2) { Player.new("Hejib") }
 
+  before :each do
+    allow(Kernel).to receive(:rand).and_return 10
+  end
+
   describe "name" do
     it "will return player's name" do
       expect(player1.name).to eq("Rajeev")
@@ -21,10 +25,8 @@ describe Player do
 
   describe "reduce points" do
     it "player 2's points reduced after attack" do
-      points_before = player2.hit_points
       player2.reduce_points
-      points_after = player2.hit_points
-      expect(points_before - points_after).to eq(10)
+      expect(player2.hit_points).to eq(70)
     end
   end
 

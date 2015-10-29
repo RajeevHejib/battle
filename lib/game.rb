@@ -9,7 +9,7 @@ class Game
   def_delegator :player2, :name, :player2_name
   def_delegator :player2, :hit_points, :player2_hit_points
   def_delegator :current_player, :name, :current_player_name
-  
+
 
   def initialize(player1, player2)
     @players = [player1, player2]
@@ -37,6 +37,4 @@ class Game
   def opposite_player
     @current_player == player1 ? player2 : player1
   end
-
-
 end

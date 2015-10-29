@@ -4,6 +4,10 @@ describe Game do
   let(:player1) { double(:player) }
   let(:player2) { double(:player) }
 
+  before :each do
+    allow(Kernel).to receive(:rand).and_return 10
+  end
+
   describe "initialize" do
     it "has player1 and player2" do
         expect(game.players).to eq ([player1, player2])
